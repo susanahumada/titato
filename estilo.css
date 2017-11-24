@@ -1,0 +1,52 @@
+@CHARSET "utf-8";
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#bodyGame{
+    width: 550px;
+    height: 550px;
+    flex-flow: row wrap;
+    
+    box-shadow: 10px 10px 30px 0px;
+}
+button{
+    vertical-align: top;
+    width: 150px;
+    height: 150px;
+    border: none;
+    position: absolute;
+    font-size: 100px;
+    color:white;
+}
+.clicked{
+    background-color: gray;
+}
+.buttons{
+    background-color: #25256fbd;
+}
+.buttons:HOVER {
+    background-color: #25256f;
+}
+#b11, #b12, #b13{
+    position: relative;
+    top:25px;
+    margin-left: 23px;
+}
+
+#b21, #b22, #b23{
+    position: relative;
+    margin-top: 45px;
+    margin-left: 23px;
+}
+
+#b31, #b32, #b33{
+    position: relative;
+    margin-top: 25px;
+    margin-left: 23px;
+}
