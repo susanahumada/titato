@@ -76,9 +76,8 @@ function validation(text){
 }
 
 function asd() {
-    console.log(String(document.getElementById('bodyGame').innerHTML))
     firebase.database().ref('game/').set({
-        progress: String(cacheKeys),
+        progress: String(String(document.getElementById('bodyGame').innerHTML)),
         turn: 'X'
   })
 }
@@ -86,6 +85,5 @@ function asd() {
 var starCountRef = firebase.database().ref('game/');
 starCountRef.on('value', function(snapshot) {
     let el = snapshot.val()
-  console.log(el.progress);
   document.getElementById('bodyGame').innerHTML = el.progress
 });
