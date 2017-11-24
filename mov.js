@@ -75,10 +75,8 @@ function validation(text){
     asd()
 }
 
-var cacheKeys = document.getElementById('bodyGame')
-
 function asd() {
-    console.log(String(cacheKeys.innerHTML))
+    console.log(String(document.getElementById('bodyGame').innerHTML))
     firebase.database().ref('game/').set({
         progress: String(cacheKeys),
         turn: 'X'
