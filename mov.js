@@ -1,4 +1,8 @@
 var con=1;
+
+var database = firebase.database();
+var starCountRef = firebase.database().ref('game/')
+
 b1="b1",b2="b2",b3="b3",b4="b4",b5="b5",b6="b6",b7="b7",b8="b8",b9="b9";
 function actions(boton){
     if(boton.className=="buttons"){
@@ -16,6 +20,7 @@ function actions(boton){
         boton.value=text;
         boton.appendChild(document.createTextNode(text));
         boton.style.backgroundColor = color;
+        boton.setAttribute('who', color)
         con++;
         asignation(text,boton);
     }else{
@@ -67,4 +72,22 @@ function validation(text){
             window.location.reload();
         }
     }
+    asd()
 }
+
+var cacheKeys = document.getElementById('bodyGame')
+
+function asd() {
+    console.log(String(cacheKeys.innerHTML))
+    firebase.database().ref('game/').set({
+        progress: String(cacheKeys),
+        turn: 'X'
+  })
+}
+
+var starCountRef = firebase.database().ref('game/');
+starCountRef.on('value', function(snapshot) {
+    let el = snapshot.val()
+  console.log(el.progress);
+  document.getElementById('bodyGame').innerHTML = el.progress
+});
