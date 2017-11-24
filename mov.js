@@ -82,14 +82,6 @@ function asd() {
   })
 }
 
-function asd() {
-    console.log(String(cacheKeys.innerHTML))
-    firebase.database().ref('game/').set({
-        progress: String(cacheKeys),
-        turn: 'X'
-  })
-}
-
 function asd2() {
     firebase.database().ref('game/').set({
         progress: `
